@@ -1,0 +1,662 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  /* outline: 2px solid red; */
+}
+
+/* header and nav bar  */
+.topnav {
+  text-align: center;
+  border-bottom: 0.5px solid rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 9px;
+}
+
+.topnav a {
+  font-size: 0.7rem;
+}
+
+li {
+  display: inline;
+  align-items: inherit;
+  justify-content: inherit;
+}
+
+li :hover {
+  background-color: #f0f0f0;
+  padding: 11px;
+  border-radius: 3px;
+}
+
+a {
+  color: #a9a9a9;
+  text-decoration: none;
+  font-size: 0.6rem;
+  padding: 6px 10px 0;
+}
+
+nav ul {
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 105px;
+  align-items: center;
+}
+
+.logo {
+  padding: initial;
+}
+
+nav a {
+  color: black;
+  font-size: 0.7rem;
+  letter-spacing: 0.1mm;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: rgba(255, 0, 0, 0.712);
+}
+
+/* for the .hamburger menu */
+.hamburger {
+  display: none;
+}
+.hamburger .navbar {
+  display: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  /* 5px for top and bottom and auto for left and right */
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #2c2525;
+  top: 0px;
+  /*To remove previous attribute under the span css */
+}
+
+@media (max-width: 900px) {
+  .topnav {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .navbar {
+    display: flex;
+    position: fixed;
+    left: -100%;
+    top: 60px;
+    gap: 10px;
+    flex-direction: column;
+    background-color: #f0f0f0;
+    text-align: center;
+    width: 80%;
+    transition: 0.3s;
+  }
+
+  .navbar.active {
+    left: 0;
+  }
+}
+
+/* body and main text on image */
+.grad {
+  background-image: linear-gradient(
+    180deg,
+    #fff1dd 44.71%,
+    rgba(255, 255, 255, 0) 110.69%
+  );
+  padding: 70px 115px 150px;
+}
+@media (max-width: 900px) {
+  .grad {
+    padding: 60px 15px;
+  }
+}
+
+h1 {
+  font-size: 3.2rem;
+  color: #2c2525;
+  font-family: Inter, Arial, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+}
+
+.grad p {
+  line-height: 1.5;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, 0.89);
+}
+
+button {
+  background-color: #ff5c00;
+  padding: 10px 15px;
+  color: white;
+  border-radius: 4px;
+  border: #ff5c00 none;
+  font-weight: 560;
+  font-size: 1em;
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow: 1px 2px 2px 2px rgba(0, 0, 0, 0.096),
+    0 3px 3px 0 rgba(0, 0, 0, 0.089);
+  transition: 0.3s;
+}
+
+h2 {
+  font-size: 1.75rem;
+  padding-left: 115px;
+  padding-bottom: 50px;
+  font-family: Inter, Arial, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  color: rgba(0, 0, 0, 0.89);
+}
+@media (max-width: 900px) {
+  h2 {
+    padding: 0;
+    text-align: center;
+  }
+}
+
+.grid {
+  padding: 0 150px;
+  display: grid;
+  grid-template-areas:
+    "Marketplace hub wholesale"
+    "center event vvip";
+  gap: 20px;
+  min-height: 120vh;
+  color: white;
+  margin-bottom: 100px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    display: block;
+    padding: 30px;
+  }
+}
+
+.Marketplace {
+  background-image: url("banners.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  background-position: center;
+  max-width: 22em;
+  grid-area: Marketplace;
+  padding: 40px 20px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .Marketplace {
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+}
+
+.hub {
+  background-image: url("banner1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  background-position: center;
+  max-width: 22em;
+  grid-area: hub;
+  padding: 40px 20px;
+  line-height: 35px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .hub {
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+}
+
+.wholesale {
+  background-image: url("banner.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  background-position: center;
+  max-width: 22em;
+  grid-area: wholesale;
+  padding: 40px 20px;
+  line-height: 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .wholesale {
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+}
+
+.center {
+  background-image: url("handshake-money-1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  background-position: center;
+  max-width: 22em;
+  grid-area: center;
+  padding: 40px 20px;
+  line-height: 38px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .center {
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+}
+
+.event {
+  background-image: url("banner3.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  background-position: center;
+  max-width: 22em;
+  grid-area: event;
+  padding: 40px 20px;
+  line-height: 38px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .event {
+    margin-bottom: 30px;
+    overflow: hidden;
+  }
+}
+
+.vvip {
+  background-image: url("banner4.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  background-position: center;
+  max-width: 22em;
+  grid-area: vvip;
+  padding: 40px 20px;
+  line-height: 30px;
+  cursor: pointer;
+}
+@media (max-width: 900px) {
+  .vvip {
+    overflow: hidden;
+  }
+}
+
+h3 {
+  font-family: Inter, Arial, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  font-size: 21px;
+}
+
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 23px;
+}
+
+span {
+  text-decoration: underline;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 550;
+  font-size: 12px;
+  position: relative;
+  top: 100px;
+  text-overflow: inherit;
+}
+
+/* main body and text  */
+
+img,
+h4 {
+  padding-bottom: 30px;
+}
+
+/* spaces between the icon and topic  */
+h4 {
+  font-family: Inter, Arial, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  font-size: 1.2rem;
+  color: #2c2525;
+}
+
+/* This is to break the sentences into the next line instead of using the <br> tags  */
+.student,
+.graduate,
+.individual,
+.organization {
+  width: 350px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.container1 {
+  width: 80%;
+  /* to get the exact spacing to the max-width and match the exact padding line from the beginning */
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 900px) {
+  .container1 {
+    display: block;
+    padding: 0 30px;
+    width: 100%;
+    text-align: center;
+  }
+  .student {
+    padding: 30px 0;
+  }
+}
+
+.container2 {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 70px;
+}
+
+@media (max-width: 900px) {
+  .container2 {
+    display: block;
+    padding: 0 30px;
+    width: 100%;
+    text-align: center;
+  }
+  .individual {
+    padding-bottom: 30px;
+  }
+}
+
+.comments {
+  margin: 0 115px;
+  background-color: #fff8f3;
+  border-radius: 20px;
+  height: 400px;
+  padding: 50px;
+  text-align: center;
+  margin-bottom: 10%;
+}
+@media (max-width: 900px) {
+  .comments {
+    margin: 0;
+  }
+}
+#text {
+  font-size: 16px;
+  line-height: 2;
+  color: rgba(0, 0, 0, 0.747);
+}
+
+#name {
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  top: auto;
+}
+
+/* This is for the logos of partners and supporters */
+
+.logo {
+  text-align: center;
+}
+
+#logos {
+  padding: 0;
+}
+
+/* this is because the element here is taking its previous attribute */
+
+#word {
+  word-spacing: 0.2em;
+  font-size: 16px;
+  padding-bottom: 60px;
+}
+
+.icons {
+  word-spacing: 5em;
+  padding-bottom: 10%;
+}
+
+.logo1 {
+  text-align: center;
+  line-height: 1.5;
+}
+
+#logos1 {
+  padding-left: 0;
+}
+
+/* this is because the element here is taking its previous attribute */
+
+.icons1 {
+  word-spacing: 7em;
+  line-height: 0;
+  padding-bottom: 0px;
+  margin-bottom: 10%;
+}
+
+.discover {
+  background-color: #ff5c00;
+  border-radius: 10px;
+  margin: 0 115px;
+  height: 370px;
+  color: white;
+  padding: 60px 70px;
+  margin-bottom: 10%;
+}
+@media (max-width: 900px) {
+  .discover {
+    margin: 0;
+    padding: 10px;
+    height: auto;
+    border-radius: 0;
+  }
+}
+
+.discover h1 {
+  font-size: 2.5rem;
+  text-emphasis: 1em;
+}
+
+.discover p {
+  line-height: 1.5;
+  font-size: 17px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-bottom: 40px;
+}
+
+#btn {
+  background-color: white;
+  padding: 12px, 30px;
+  color: whitesmoke;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 1em;
+  color: #ff5c00;
+}
+
+#btn:hover {
+  background-color: hsla(0, 2%, 90%, 0.937);
+}
+
+/* The footer section  */
+
+footer {
+  background-color: rgb(37, 32, 29);
+  color: white;
+}
+
+.mem {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (max-width: 900px) {
+  .mem {
+    display: block;
+  }
+}
+
+.mem img {
+  position: relative;
+  bottom: 40px;
+  left: 90px;
+  width: 400px;
+}
+
+@media (max-width: 900px) {
+  .mem img {
+    position: initial;
+    padding: 15px;
+  }
+}
+
+.mem h3 {
+  font-size: 2em;
+}
+
+.mem p {
+  font-size: 15px;
+  line-height: 30px;
+}
+
+.newsletter {
+  padding: 50px;
+}
+
+input {
+  padding: 17px 200px 17px 10px;
+  background-color: rgb(81, 77, 74);
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  border-style: none;
+  border-width: 0;
+}
+
+.btn {
+  background-color: rgb(224, 224, 224);
+  color: rgb(81, 77, 74);
+  position: relative;
+  right: 110px;
+}
+@media (max-width: 900px) {
+  .btn {
+    position: initial;
+    margin: 5px auto;
+  }
+}
+.SUB {
+  text-decoration: none;
+  top: 0px;
+  /*  this is to remove the initial attribute of top in other tags used  */
+}
+/* FOOTER LIST SECTION */
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+@media (max-width: 900px) {
+  .container {
+    display: block;
+  }
+}
+
+.column b {
+  color: white;
+}
+
+.column ul {
+  background-color: rgb(37, 32, 29);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  text-align: left;
+  line-height: 3;
+  color: #a9a9a9;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: 560;
+}
+
+.column li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+li b:hover {
+  cursor: initial;
+  background: none;
+  padding: 0px;
+}
+
+.column a {
+  padding: 0px;
+  /* to remove external attribute */
+}
+
+.contact img {
+  display: flex;
+  padding: 0px;
+}
+
+.contact img:hover {
+  background-color: rgba(44, 96, 240, 0.678);
+  cursor: pointer;
+  width: 25px;
+}
+
+h5 {
+  text-align: center;
+  padding: 15px;
+  color: #a9a9a9;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+}
