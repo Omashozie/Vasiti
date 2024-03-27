@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   max-width: 100%;
-  /* outline: 2px solid red; */
+  /* outline: 2px solid red;  ( to check and adjust overflows)*/
 }
 
 /* header and nav bar  */
@@ -111,8 +111,8 @@ nav a:hover {
     gap: 10px;
     flex-direction: column;
     background-color: #f0f0f0;
-    text-align: center;
-    width: 80%;
+    text-align: right;
+    width: 100%;
     transition: 0.3s;
   }
 
@@ -550,7 +550,7 @@ footer {
 @media (max-width: 900px) {
   .mem img {
     position: initial;
-    padding: 15px;
+    padding:18px;
   }
 }
 
@@ -606,11 +606,15 @@ input {
 @media (max-width: 900px) {
   .container {
     display: block;
+    margin: auto;    /*(To centralize the whole container)*/
+    width: 50%;      /*(To centralize the whole container)*/
+    padding-bottom: 100px;
   }
 }
 
 .column b {
-  color: white;
+  color: #ffffff;
+  font-size: 15px;
 }
 
 .column ul {
@@ -642,15 +646,13 @@ li b:hover {
   /* to remove external attribute */
 }
 
-.contact img {
-  display: flex;
+.contact img{
   padding: 0px;
 }
 
 .contact img:hover {
   background-color: rgba(44, 96, 240, 0.678);
   cursor: pointer;
-  width: 25px;
 }
 
 h5 {
