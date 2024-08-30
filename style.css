@@ -45,6 +45,12 @@ nav ul {
   align-items: center;
 }
 
+@media (max-width: 900px) {
+  nav ul {
+    padding: 0 15px;
+  }
+}
+
 .logo {
   padding: initial;
 }
@@ -64,6 +70,7 @@ nav a:hover {
 .hamburger {
   display: none;
 }
+
 .hamburger .navbar {
   display: none;
   cursor: pointer;
@@ -123,13 +130,12 @@ nav a:hover {
 
 /* body and main text on image */
 .grad {
-  background-image: linear-gradient(
-    180deg,
-    #fff1dd 44.71%,
-    rgba(255, 255, 255, 0) 110.69%
-  );
+  background-image: linear-gradient(180deg,
+      #fff1dd 44.71%,
+      rgba(255, 255, 255, 0) 110.69%);
   padding: 70px 115px 150px;
 }
+
 @media (max-width: 900px) {
   .grad {
     padding: 60px 15px;
@@ -177,6 +183,7 @@ h2 {
     "Segoe UI Symbol";
   color: rgba(0, 0, 0, 0.89);
 }
+
 @media (max-width: 900px) {
   h2 {
     padding: 0;
@@ -196,10 +203,16 @@ h2 {
   margin-bottom: 100px;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 560px) {
   .grid {
     display: block;
-    padding: 30px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .grid {
+    padding: 10px 30px;
+    min-height: auto;
   }
 }
 
@@ -315,9 +328,10 @@ h2 {
   line-height: 30px;
   cursor: pointer;
 }
+
 @media (max-width: 900px) {
   .vvip {
-    overflow: hidden;
+    overflow-wrap: anywhere;
   }
 }
 
@@ -342,6 +356,14 @@ span {
   position: relative;
   top: 100px;
   text-overflow: inherit;
+}
+
+@media screen and (max-width: 1300px) {
+  span {
+    top: 50px;
+    justify-content: start;
+    display: flex;
+  }
 }
 
 /* main body and text  */
@@ -379,13 +401,24 @@ h4 {
   margin-bottom: 50px;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
+  .container1 {
+    width: auto;
+    padding: 10px;
+    /*for gaps around the text*/
+    gap: 10px;
+    /*for gaps in between the text*/
+  }
+}
+
+@media (max-width: 700px) {
   .container1 {
     display: block;
     padding: 0 30px;
     width: 100%;
     text-align: center;
   }
+
   .student {
     padding: 30px 0;
   }
@@ -398,13 +431,24 @@ h4 {
   margin-bottom: 70px;
 }
 
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
+  .container2 {
+    width: auto;
+    padding: 10px;
+    /*for gaps around the text*/
+    gap: 10px;
+    /*for gaps in between the text*/
+  }
+}
+
+@media (max-width: 700px) {
   .container2 {
     display: block;
     padding: 0 30px;
     width: 100%;
     text-align: center;
   }
+
   .individual {
     padding-bottom: 30px;
   }
@@ -418,12 +462,29 @@ h4 {
   padding: 50px;
   text-align: center;
   margin-bottom: 10%;
+  animation-name: fade;
+  animation-duration: 8s;
+  animation-timing-function: cubic-bezier(1, -0.19, 1, 1);
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
 }
+
+@keyframes fade {
+  from {
+    background: #fff8f3;
+  }
+
+  to {
+    opacity: 0%;
+  }
+}
+
 @media (max-width: 900px) {
   .comments {
     margin: 0;
   }
 }
+
 #text {
   font-size: 16px;
   line-height: 2;
@@ -487,12 +548,13 @@ h4 {
   padding: 60px 70px;
   margin-bottom: 10%;
 }
+
 @media (max-width: 900px) {
   .discover {
-    margin: 0;
+    margin: 20px;
     padding: 10px;
     height: auto;
-    border-radius: 0;
+    border-radius: 10px;
   }
 }
 
@@ -527,6 +589,7 @@ h4 {
 footer {
   background-color: rgb(37, 32, 29);
   color: white;
+  margin: 10px;
 }
 
 .mem {
@@ -550,7 +613,7 @@ footer {
 @media (max-width: 900px) {
   .mem img {
     position: initial;
-    padding:18px;
+    padding: 18px;
   }
 }
 
@@ -583,17 +646,20 @@ input {
   position: relative;
   right: 110px;
 }
+
 @media (max-width: 900px) {
   .btn {
     position: initial;
     margin: 5px auto;
   }
 }
+
 .SUB {
   text-decoration: none;
   top: 0px;
   /*  this is to remove the initial attribute of top in other tags used  */
 }
+
 /* FOOTER LIST SECTION */
 
 .container {
@@ -606,8 +672,10 @@ input {
 @media (max-width: 900px) {
   .container {
     display: block;
-    margin: auto;    /*(To centralize the whole container)*/
-    width: 50%;      /*(To centralize the whole container)*/
+    margin: auto;
+    /*(To centralize the whole container)*/
+    width: 50%;
+    /*(To centralize the whole container)*/
     padding-bottom: 100px;
   }
 }
@@ -646,7 +714,7 @@ li b:hover {
   /* to remove external attribute */
 }
 
-.contact img{
+.contact img {
   padding: 0px;
 }
 
